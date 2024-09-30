@@ -2,12 +2,15 @@ package frc.robot.drivetrain;
 
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
+import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.shuffleboard.*;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import edu.wpi.first.math.kinematics.DifferentialDrive;
+import edu.wpi.first.math.controller.PIDController;
 
 public class DrivetrainSubsystem extends SubsystemBase {
     private ShuffleboardTab tab;
+
+    DifferentialDrive drive;
 
     TalonSRX frontLeft;
     TalonSRX backLeft;
@@ -16,6 +19,7 @@ public class DrivetrainSubsystem extends SubsystemBase {
 
     double controlForward = 0;
     double controlSide = 0;
+
 
     public DrivetrainSubsystem() {
         tab = Shuffleboard.getTab("example subsystem");
@@ -37,6 +41,8 @@ public class DrivetrainSubsystem extends SubsystemBase {
         backLeft.setInverted(true);
         frontRight.setInverted(false);
         backRight.setInverted(false);
+
+        drive = new DifferentialDrive();
     }
 
     @Override
