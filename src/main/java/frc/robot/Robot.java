@@ -7,13 +7,13 @@ package frc.robot;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
-import frc.robot.subsystemExample.ExampleSubsystem;
+import frc.robot.drivetrain.DrivetrainSubsystem;
 import frc.robot.testing.*;
 import frc.robot.match.*;
 import frc.robot.components.*;
 
 public class Robot extends TimedRobot {
-  public static ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
+  public static DrivetrainSubsystem exampleSubsystem = new DrivetrainSubsystem();
   @Override
   public void robotInit() {
     GUI.initialize();
